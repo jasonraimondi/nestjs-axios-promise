@@ -35,7 +35,8 @@
     "axios": "^0.27.2"
   },
   "jest": {
-    "preset": "ts-jest"
+    "preset": "ts-jest",
+    "coverageReporters": ["lcov"]
   },
   "publishConfig": {
     "main": "dist/index.js",
