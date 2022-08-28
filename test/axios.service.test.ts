@@ -3,7 +3,6 @@ import Axios, { AxiosInstance } from "axios";
 
 import { AXIOS_PROMISE_INSTANCE_TOKEN, AxiosService } from "../src";
 
-
 describe(AxiosService, () => {
   const MOCK_RESPONSE = "MOCK_RESPONSE";
 
