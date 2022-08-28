@@ -24,7 +24,9 @@ import { AxiosService } from "./axios.service";
   providers: [MyCustomService],
 })
 export class AppModule {}
+```
 
+```typescript
 @Injectable()
 export class MyCustomService {
   constructor(private readonly http: AxiosService) {}
