@@ -1,0 +1,9 @@
+{
+  "extends": "@jmondi/tsconfig",
+  "compilerOptions": {
+    "declaration": true,
+    "experimentalDecorators": true,
+  },
+  "include": ["src"],
+  "exclude": ["**/*.spec.ts"]
+}
