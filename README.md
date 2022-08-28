@@ -6,7 +6,7 @@
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/jasonraimondi/nestjs-axios-promise?style=flat-square)](https://github.com/jasonraimondi/nestjs-axios-promise/releases/latest)
 [![NPM Downloads](https://img.shields.io/npm/dt/nestjs-axios-promise?label=npm%20downloads&style=flat-square)](https://www.npmjs.com/package/nestjs-axios-promise)
 
-A thin wrapper around [Axios](https://github.com/axios/axios) for [Nest.js](https://github.com/nestjs/nest) using Promises instead of Observables.
+A thin wrapper around [Axios](https://github.com/axios/axios) for [Nest.js](https://github.com/nestjs/nest) using Promises.
 
 ## Install
 
