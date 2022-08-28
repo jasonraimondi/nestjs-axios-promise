@@ -25,6 +25,7 @@ jobs:
           cache-dependency-path: pnpm-lock.yaml
       - run: pnpm install --frozen-lockfile
       - run: pnpm test -- --coverage
+      - run: pnpm prettier --check .
       - name: report coverage to code climate
         # code coverage report will only run on the main branch and not on pull request
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
@@ -51,7 +52,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
           cache-dependency-path: pnpm-lock.yaml
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: "https://registry.npmjs.org"
       - run: pnpm install --frozen-lockfile
       - if: github.ref_name == 'main'
         run: pnpm publish --access=public
