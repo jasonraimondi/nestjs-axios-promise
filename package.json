@@ -1,6 +1,6 @@
 {
   "name": "nestjs-axios-promise",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Jason Raimondi <jason@raimondi.us>",
   "main": "src/index.ts",
   "files": [

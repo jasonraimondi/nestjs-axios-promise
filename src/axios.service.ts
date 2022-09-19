@@ -8,6 +8,14 @@ export class AxiosService {
     protected readonly instance: AxiosInstance = Axios,
   ) {}
 
+  get axios(): AxiosInstance {
+    return this.instance;
+  }
+
+  get interceptors() {
+    return this.instance.interceptors;
+  }
+
   request<T = any, R = AxiosResponse<T>, D = any>(config: AxiosRequestConfig<D>): Promise<R> {
     return this.instance.request<T, R, D>(config);
   }
