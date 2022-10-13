@@ -1,6 +1,6 @@
 {
   "name": "nestjs-axios-promise",
-  "version": "0.2.0",
+  "version": "1.0.0-rc.1",
   "author": "Jason Raimondi <jason@raimondi.us>",
   "main": "src/index.ts",
   "files": [
@@ -24,7 +24,7 @@
     "@nestjs/testing": "^9.0.11",
     "@types/jest": "^28.1.8",
     "@types/node": "^18.7.13",
-    "axios": "^0.27.2",
+    "axios": "^1.1.2",
     "jest": "^28.1.3",
     "prettier": "^2.7.1",
     "reflect-metadata": "^0.1.13",
@@ -34,7 +34,7 @@
   },
   "peerDependencies": {
     "@nestjs/common": "*",
-    "axios": "^0.27.2"
+    "axios": "^0.27.2 || ^1.1.2"
   },
   "jest": {
     "preset": "ts-jest",
