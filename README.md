@@ -1,6 +1,6 @@
 # Nest.js Axios Promise
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jasonraimondi/nestjs-axios-promise/nodejs?label=Unit%20Tests&style=flat-square)](https://github.com/jasonraimondi/nestjs-axios-promise)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/allmyfutures/nestjs-axios-promise/nodejs.yml?branch=main&label=Unit%20Tests&style=flat-square)](https://github.com/jasonraimondi/nestjs-axios-promise)
 [![Test Coverage](https://img.shields.io/codeclimate/coverage/jasonraimondi/nestjs-axios-promise?style=flat-square)](https://codeclimate.com/github/jasonraimondi/nestjs-axios-promise/test_coverage)
 [![Maintainability](https://img.shields.io/codeclimate/coverage-letter/jasonraimondi/nestjs-axios-promise?label=maintainability&style=flat-square)](https://codeclimate.com/github/jasonraimondi/nestjs-axios-promise/maintainability)
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/jasonraimondi/nestjs-axios-promise?style=flat-square)](https://github.com/jasonraimondi/nestjs-axios-promise/releases/latest)
