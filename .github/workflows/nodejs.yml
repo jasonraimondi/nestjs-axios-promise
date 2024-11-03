@@ -1,8 +1,8 @@
 name: nodejs
 
 env:
-  PNPM_VERSION: "7.9.1"
-  NODE_VERSION: "16.x"
+  PNPM_VERSION: "9.x"
+  NODE_VERSION: "22.x"
 
 on:
   push:
