@@ -38,20 +38,111 @@ export class MyCustomService {
 }
 ```
 
-### Custom Config
+### Custom Axios config
 
 ```typescript
 @Module({
   imports: [
     AxiosModule.register({
-      baseURL: "https://example.com",
-      headers: {
-        "X-My-Header": "Is a value!",
+      config: {
+        baseURL: "https://example.com",
+        headers: {
+          "X-My-Header": "Is a value!",
+        },
       },
     }),
   ],
 })
 export class AppModule {}
+```
+
+#### Register Axios interceptors
+
+[Axios interceptors](https://axios-http.com/docs/interceptors) can be
+configured on Axios clients to intercept requests or responses before they are
+handled by `then` or `catch`.
+
+```typescript
+import { create } from "axios";
+
+const client = create();
+
+client.interceptors.request.use(
+  (request) => {
+    return request;
+  },
+  (err) => {
+    return err;
+  },
+  {},
+);
+
+client.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (err) => {
+    return err;
+  },
+  {},
+);
+```
+
+However, because NestJS abstracts away the construction of services, including
+this library's Axios wrapper which makes registering Axios interceptors
+difficult via the usual approach.
+
+To resolve this, this module provides an additional way to configure
+interceptors via the module registration configuration:
+
+```typescript
+@Module({
+  imports: [
+    AxiosModule.register({
+      interceptors: {
+        request: {
+          onFulfilled: (requestConfig) => {
+            return requestConfig;
+          },
+          onRejected: (err) => {
+            return err;
+          },
+          options: {},
+        },
+
+        response: {
+          onFulfilled: (response) => {
+            return response;
+          },
+          onRejected: (err) => {
+            return err;
+          },
+          options: {},
+        },
+      },
+    }),
+  ],
+})
+export class AppModule {}
+```
+
+Interceptors can still be modified later via the Axios reference on the
+service:
+
+```typescript
+import { HttpService } from "nestjs-axios-promise";
+
+@Injectable()
+export class CatsService {
+  public constructor(private readonly httpService: HttpService) {}
+
+  public doThing() {
+    this.httpService.axios.interceptors.request.use((requestConfig) => {
+      return requestConfig;
+    });
+    this.httpService.axios.interceptors.request.eject();
+  }
+}
 ```
 
 ### Why
@@ -79,7 +170,8 @@ export class CatsService {
 }
 ```
 
-MUCH more preferrable to the nestjs way of using an observable. They're casting their observable to a promise anyways... :facepalm:
+MUCH more preferable to the NestJS way of using an observable. They're casting
+their observable to a promise anyways... :facepalm:
 
 ```ts
 import { catchError, firstValueFrom } from "rxjs";
