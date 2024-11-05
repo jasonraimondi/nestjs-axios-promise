@@ -3,7 +3,8 @@
 **Breaking: Axios configuration options must now be nested under a `config` key in module registration to support new features**
 
 Before:
-```ts 
+
+```ts
 AxiosModule.register({
   baseURL: "https://example.com",
   ...
@@ -11,6 +12,7 @@ AxiosModule.register({
 ```
 
 After:
+
 ```ts
 AxiosModule.register({
   config: {
